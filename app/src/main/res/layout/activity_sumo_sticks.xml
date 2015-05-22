@@ -9,8 +9,17 @@
                 tools:context=".SumoSticks">
 
     <TextView
-        android:text="@string/hello_world"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="OPTIONS"
+        android:id="@+id/textView"
+        android:textAlignment="center"
+        android:textSize="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="84dp"
+        android:layout_marginStart="84dp"
+        android:textStyle="bold"/>
 
 </RelativeLayout>
