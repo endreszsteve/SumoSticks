@@ -41,17 +41,73 @@ public class MainMenuScreen extends Screen
                 if(inBounds(event, 64, 220, 192, 42))
                 {
                     game.setScreen(new GameScreen(game));
-
-
-
+                    if(Settings.soundenabled)
+                        Assets.click.play(1);
+                    return;
                 }
 
                 if (inBounds(event, 64, 220 + 42, 192, 42))
                 {
+                    game.setScreen(new HighScoreScreen(game));
+                    if(Settings.soundenabled)
+                        Assets.click.play(1);
+                    return;
+                }
 
+                if (inBounds(event, 64, 220 + 84, 192, 42))
+                {
+                    game.setScreen(new HelpScreen(game));
+                    if(Settings.soundenabled)
+                        Assets.click.play(1);
+                    return;
                 }
             }
         }
+    }
+
+    private boolean inBounds(TouchEvent event, int x, int y, int width, int height)
+    {
+        if(event.x > x && event.x < x + width - 1 && event.y > y && event.y < y + height - 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void present(float deltaTime)
+    {
+        Graphics g = game.getGraphics();
+
+        g.drawPixMap(Assets.background, 0, 0);
+        g.drawPixMap(Assets.logo, 32, 20);
+        g.drawPixMap(Assets.mainMenu, 64, 220);
+
+        if(Settings.soundenabled)
+        {
+            g.drawPixMap(Assets.buttons, 0 , 416, 0, 0, 64, 64);
+        }
+        else
+        {
+            g.drawPixMap(Assets.buttons, 0, 416, 0, 0, 64, 64);
+        }
+    }
+
+    public void pause()
+    {
+        Settings.save(game.getFileIO());
+    }
+
+    public void resume()
+    {
+
+    }
+
+    public void dispose()
+    {
+
     }
 
 }
