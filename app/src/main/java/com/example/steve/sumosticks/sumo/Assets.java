@@ -9,6 +9,7 @@ import com.example.steve.sumosticks.Sound;
 public class Assets
 {
     public static Pixmap background;
+    public static Pixmap gamebg;
     public static Pixmap logo;
     public static Pixmap mainMenu;
     public static Pixmap buttons;
@@ -20,7 +21,13 @@ public class Assets
     public static Pixmap pause;
     public static Pixmap gameOver;
     public static Pixmap playersumo;
+    public static Pixmap playersumo1;
+    public static Pixmap playersumo2;
+    public static Pixmap playersumo3;
     public static Pixmap cpusumo;
+    public static Pixmap cpusumo1;
+    public static Pixmap cpusumo2;
+    public static Pixmap cpusumo3;
     public static Pixmap judge;
     public static Pixmap arena;
 

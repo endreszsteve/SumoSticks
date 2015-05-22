@@ -19,6 +19,7 @@ public class LoadingScreen extends Screen
     {
         Graphics g = game.getGraphics();
         Assets.background = g.newPixmap("background.png", PixmapFormat.RGB565);
+        Assets.gamebg = g.newPixmap("gamebg.png", PixmapFormat.ARGB4444);
         Assets.logo = g.newPixmap("logo.png", PixmapFormat.ARGB4444);
         Assets.mainMenu = g.newPixmap("mainmenu.png", PixmapFormat.ARGB4444);
         Assets.buttons = g.newPixmap("buttons.png", PixmapFormat.ARGB4444);
@@ -30,7 +31,13 @@ public class LoadingScreen extends Screen
         Assets.pause = g.newPixmap("pause.png", PixmapFormat.ARGB4444);
         Assets.gameOver = g.newPixmap("gameover.png", PixmapFormat.ARGB4444);
         Assets.playersumo = g.newPixmap("playersumo.png", PixmapFormat.ARGB4444);
+        Assets.playersumo1 = g.newPixmap("playersumo1.png", PixmapFormat.ARGB4444);
+        Assets.playersumo2 = g.newPixmap("playersumo2.png", PixmapFormat.ARGB4444);
+        Assets.playersumo3 = g.newPixmap("playersumo3.png", PixmapFormat.ARGB4444);
         Assets.cpusumo = g.newPixmap("cpusumo.png", PixmapFormat.ARGB4444);
+        Assets.cpusumo1 = g.newPixmap("cpusumo1.png", PixmapFormat.ARGB4444);
+        Assets.cpusumo2 = g.newPixmap("cpusumo2.png", PixmapFormat.ARGB4444);
+        Assets.cpusumo3 = g.newPixmap("cpusumo3.png", PixmapFormat.ARGB4444);
         Assets.judge = g.newPixmap("judge.png", PixmapFormat.ARGB4444);
         Assets.arena = g.newPixmap("arena.png", PixmapFormat.ARGB4444);
         Assets.click = game.getAudio().newSound("click.ogg");
