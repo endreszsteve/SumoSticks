@@ -77,10 +77,12 @@ public class GameScreen extends Screen
                 if(event.x < 64 && event.y > 416)
                 {
                     world.player.slapLeft();
+                    Assets.slap.play(1);
                 }
                 if(event.x < 256 && event.y > 416)
                 {
                     world.player.slapRight();
+                    Assets.slap.play(1);
                 }
             }
         }
@@ -97,7 +99,7 @@ public class GameScreen extends Screen
             score = "" + oldScore;
             if(Settings.soundenabled)
             {
-            Assets.slap.play(1);
+            Assets.cheer.play(1);
             }
         }
     }

@@ -39,7 +39,7 @@ public class LoadingScreen extends Screen
         Assets.cpusumo2 = g.newPixmap("cpusumo2.png", PixmapFormat.ARGB4444);
         Assets.cpusumo3 = g.newPixmap("cpusumo3.png", PixmapFormat.ARGB4444);
         Assets.judge = g.newPixmap("judge.png", PixmapFormat.ARGB4444);
-        Assets.arena = g.newPixmap("arena.png", PixmapFormat.ARGB4444);
+        Assets.arena = g.newPixmap("gamebg.png", PixmapFormat.ARGB4444);
         Assets.click = game.getAudio().newSound("click.ogg");
         Assets.slap = game.getAudio().newSound("slap.ogg");
         Assets.cheer = game.getAudio().newSound("cheer.ogg");

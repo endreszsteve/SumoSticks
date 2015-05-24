@@ -1,12 +1,14 @@
 package com.example.steve.sumosticks;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.steve.sumosticks.sumo.R;
 
-public class SumoSticks extends ActionBarActivity
+
+public class SumoSticks extends Activity
 {
 
     @Override
