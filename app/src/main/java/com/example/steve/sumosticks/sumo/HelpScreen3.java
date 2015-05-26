@@ -45,7 +45,7 @@ public class HelpScreen3 extends Screen
     {
         Graphics g = game.getGraphics();
         g.drawPixMap(Assets.background, 0, 0);
-        g.drawPixMap(Assets.help3, 64, 100);
+        g.drawPixMap(Assets.help3, 0, 0);
         g.drawPixMap(Assets.buttons, 256, 416, 0, 64, 64, 64);
     }
 

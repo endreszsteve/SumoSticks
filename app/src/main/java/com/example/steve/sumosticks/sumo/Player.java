@@ -1,10 +1,12 @@
 package com.example.steve.sumosticks.sumo;
 
+import com.example.steve.sumosticks.impl.DynamicGameObject;
+
 /**
  * Created by Steve on 2015-05-22.
  */
 
-public class Player
+public class Player extends DynamicGameObject
 {
     public static int TYPE_1 = 0;
     public static int TYPE_2 = 1;
@@ -13,11 +15,14 @@ public class Player
     public int x, y;
     public int type;
 
-    public Player(int x, int y, int type)
+    public Player(int x, int y, int radius, int type)
     {
+        super(x, y, radius);
         this.x = x;
         this.y = y;
         this.type = type;
+        accel.set(0,0);
+        velocity.set(0,0);
     }
 
     public void slapLeft()

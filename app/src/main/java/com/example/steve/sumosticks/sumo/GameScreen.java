@@ -174,6 +174,7 @@ public class GameScreen extends Screen
     private void drawWorld(World world)
     {
         Graphics g = game.getGraphics();
+        g.drawPixMap(Assets.gamebg, 0, 0);
         Player player = world.player;
         CPU cpu = world.cpu;
 
@@ -186,8 +187,8 @@ public class GameScreen extends Screen
             cpuPixmap = Assets.cpusumo2;
         if(cpu.type == CPU.TYPE_4)
             cpuPixmap = Assets.cpusumo3;
-        int x = cpu.x * 32;
-        int y = cpu.y * 32;
+        int x = cpu.x;
+        int y = cpu.y;
         g.drawPixMap(cpuPixmap, x, y);
 
         Pixmap playerPixmap = null;
@@ -199,8 +200,8 @@ public class GameScreen extends Screen
             playerPixmap = Assets.playersumo2;
         if(player.type == Player.TYPE_4)
             playerPixmap = Assets.playersumo3;
-         x = player.x * 32;
-         y = player.y * 32;
+         x = player.x;
+         y = player.y;
         g.drawPixMap(playerPixmap, x, y);
     }
 
@@ -217,8 +218,9 @@ public class GameScreen extends Screen
         Graphics g = game.getGraphics();
 
         g.drawPixMap(Assets.buttons, 0, 0, 64, 128, 64, 64);
-        g.drawLine(0, 416, 480, 416, Color.BLACK);
+        //g.drawLine(0, 416, 480, 416, Color.BLACK);
         g.drawPixMap(Assets.buttons, 0, 416, 64, 64, 64, 64);
+        g.drawPixMap(Assets.buttons, 128, 416,128, 128, 64, 64);
         g.drawPixMap(Assets.buttons, 256, 416, 0, 64, 64, 64);
     }
 

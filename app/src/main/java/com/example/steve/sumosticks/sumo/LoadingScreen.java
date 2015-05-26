@@ -38,14 +38,14 @@ public class LoadingScreen extends Screen
         Assets.cpusumo1 = g.newPixmap("cpusumo1.png", PixmapFormat.ARGB4444);
         Assets.cpusumo2 = g.newPixmap("cpusumo2.png", PixmapFormat.ARGB4444);
         Assets.cpusumo3 = g.newPixmap("cpusumo3.png", PixmapFormat.ARGB4444);
-        Assets.judge = g.newPixmap("judge.png", PixmapFormat.ARGB4444);
+        //Assets.judge = g.newPixmap("judge.png", PixmapFormat.ARGB4444);
         Assets.arena = g.newPixmap("gamebg.png", PixmapFormat.ARGB4444);
         Assets.click = game.getAudio().newSound("click.ogg");
-        Assets.slap = game.getAudio().newSound("slap.ogg");
-        Assets.cheer = game.getAudio().newSound("cheer.ogg");
-        Assets.Win = game.getAudio().newSound("win.ogg");
-        Assets.Lose = game.getAudio().newSound("lose.ogg");
-        Assets.grunt = game.getAudio().newSound("grunt.ogg");
+        //Assets.slap = game.getAudio().newSound("slap.ogg");
+        //Assets.cheer = game.getAudio().newSound("cheer.ogg");
+        //Assets.Win = game.getAudio().newSound("win.ogg");
+        //Assets.Lose = game.getAudio().newSound("lose.ogg");
+        //Assets.grunt = game.getAudio().newSound("grunt.ogg");
         Settings.load(game.getFileIO());
         game.setScreen(new MainMenuScreen(game));
     }
