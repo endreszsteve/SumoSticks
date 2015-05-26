@@ -41,4 +41,9 @@ public class Player extends DynamicGameObject
         type = 3;
     }
     */
+
+    public void update(float deltaTime)
+    {
+
+    }
 }

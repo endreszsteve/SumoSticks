@@ -33,6 +33,15 @@ public class AccelerometerHandler implements SensorEventListener
         accelX = event.values[0];
         accelY = event.values[1];
         accelZ = event.values[2];
+
+        final double alpha = 0.8;
+
+        double gravity[] = {0, 0, 0};
+
+        // low pass filter
+        gravity[0] = alpha * gravity[0] + (1 - alpha) * event.values[0];
+        gravity[1] = alpha * gravity[1] + (1 - alpha) * event.values[1];
+        gravity[2] = alpha * gravity[2] + (1 - alpha) * event.values[2];
     }
 
     public float getAccelX()
