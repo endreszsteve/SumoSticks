@@ -1,6 +1,7 @@
 package com.example.steve.sumosticks.sumo;
 
 import com.example.steve.sumosticks.impl.DynamicGameObject;
+import com.example.steve.sumosticks.impl.AccelerometerHandler;
 
 /**
  * Created by Steve on 2015-05-22.
@@ -14,6 +15,9 @@ public class Player extends DynamicGameObject
     public static int TYPE_4 = 3;
     public int x, y;
     public int type;
+    public final int MAX_VEL = 1;
+
+    public AccelerometerHandler accelerometerHandler;
 
     public Player(int x, int y, int radius, int type)
     {
@@ -22,7 +26,8 @@ public class Player extends DynamicGameObject
         this.y = y;
         this.type = type;
         accel.set(0,0);
-        velocity.set(0,0);
+        velocity.set(1,1);
+
     }
 
     public void slapLeft()
@@ -42,8 +47,4 @@ public class Player extends DynamicGameObject
     }
     */
 
-    public void update(float deltaTime)
-    {
-
-    }
 }

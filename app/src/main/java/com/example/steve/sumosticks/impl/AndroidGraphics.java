@@ -135,4 +135,10 @@ public class AndroidGraphics implements Graphics
     {
         return frameBuffer.getHeight();
     }
+
+    @Override
+    public Bitmap getFrameBuffer()
+    {
+        return frameBuffer;
+    }
 }

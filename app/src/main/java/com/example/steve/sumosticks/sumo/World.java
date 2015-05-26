@@ -23,8 +23,8 @@ public class World
 
     public World()
     {
-        player = new Player(145, 189, 32, 0);
         cpu = new CPU(149, 66, 32, 0);
+        player = new Player(145, 189, 32, 0);
     }
 
     public void update(float deltaTime)

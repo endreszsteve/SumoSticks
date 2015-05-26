@@ -1,5 +1,7 @@
 package com.example.steve.sumosticks;
 
+import android.graphics.Bitmap;
+
 public interface Graphics
 {
     public static enum PixmapFormat
@@ -24,4 +26,6 @@ public interface Graphics
     public int getWidth();
 
     public int getHeight();
+
+    public Bitmap getFrameBuffer();
 }

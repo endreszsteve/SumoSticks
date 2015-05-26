@@ -6,6 +6,7 @@ package com.example.steve.sumosticks.sumo;
 import java.util.List;
 import java.util.Set;
 
+import android.graphics.Canvas;
 import android.graphics.Color;
 
 import com.example.steve.sumosticks.Game;
@@ -13,9 +14,13 @@ import com.example.steve.sumosticks.Graphics;
 import com.example.steve.sumosticks.Input.TouchEvent;
 import com.example.steve.sumosticks.Pixmap;
 import com.example.steve.sumosticks.Screen;
+import com.example.steve.sumosticks.impl.AccelerometerHandler;
+
+
 
 public class GameScreen extends Screen
 {
+    Graphics g = game.getGraphics();
     enum GameState{
         Ready,
         Running,
@@ -27,11 +32,15 @@ public class GameScreen extends Screen
     World world;
     int oldScore = 0;
     String score = "0";
+    Canvas canvas;
+    Player p;
+    AccelerometerHandler a;
 
     public GameScreen(Game game)
     {
         super(game);
         world = new World();
+        canvas = new Canvas(g.getFrameBuffer());
     }
 
     @Override
@@ -58,6 +67,19 @@ public class GameScreen extends Screen
 
     private void updateRunning(List<TouchEvent> touchEvents, float deltaTime)
     {
+
+        // Accelerometer stuff
+        float rotationAmountX = 0;
+        float rotationAmountZ = 0;
+
+        rotationAmountX += game.getInput().getAccelX() * -Math.abs(0.5 * game.getInput().getAccelX()); // make variable for power
+        rotationAmountZ += game.getInput().getAccelZ() * -Math.abs(0.5 * game.getInput().getAccelZ());
+
+
+
+        p.position.x += rotationAmountX;
+        p.position.y += rotationAmountZ;
+
         int len = touchEvents.size();
         for(int i = 0; i < len; i++)
         {
@@ -77,12 +99,12 @@ public class GameScreen extends Screen
                 if(event.x < 64 && event.y > 416)
                 {
                     world.player.slapLeft();
-                    Assets.slap.play(1);
+                    Assets.click.play(1);
                 }
                 if(event.x < 256 && event.y > 416)
                 {
                     world.player.slapRight();
-                    Assets.slap.play(1);
+                    Assets.click.play(1);
                 }
             }
         }
@@ -271,6 +293,7 @@ public class GameScreen extends Screen
             x += srcWidth;
         }
     }
+
 
     @Override
     public void pause()
